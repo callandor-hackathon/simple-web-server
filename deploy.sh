@@ -1,3 +1,4 @@
+#!/bin/bash
 
 REPOSITORY=$1
 
@@ -7,16 +8,21 @@ cd $REPOSITORY
 # Pull Changes from GitHub
 git pull origin main
 
-# Activate Virtual Environment
+# Create Virtual Environment
 python3 -m venv venv
 
+# Activate Virtual Environment
 source venv/bin/activate
 
 # Install Requirements
 pip install -r requirements.txt
 
 # Terminate Existing Process
-pkill -f main.py
+sudo pm2 stop all
+
+# Indicate Production
+export ENV=vm
 
 # Run Application
-nohup python main.py &
+sudo pm2 start main.py --interpreter venv/bin/python
+# sudo pm2 "venv/bin/flask --app main.py run --host=0.0.0.0 --port=80"

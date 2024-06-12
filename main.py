@@ -6,18 +6,14 @@ import requests
 
 dotenv.load_dotenv()
 
-print(os.environ.get("HACKATHON_MACHINE"))
 
-if os.environ.get("HACKATHON_MACHINE") == "VM":
-    site = "http://hacks.eastus.cloudapp.azure.com"
+if os.environ.get("ENV") == "vm":
     host = "0.0.0.0"
     port = 80
-    debug = False
 else:
-    site = "http://localhost"
-    host = "127.0.0.1"
+    host = "localhost"
     port = 8080
-    debug = True
+
 
 app = flask.Flask(__name__)
 
@@ -69,4 +65,4 @@ def restricted_endpoint():
 
 
 if __name__ == "__main__":
-    app.run(host=host, port=port, debug=debug)
+    app.run(host=host, port=port)
