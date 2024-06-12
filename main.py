@@ -6,6 +6,8 @@ import requests
 
 dotenv.load_dotenv()
 
+print(os.environ.get("HACKATHON_MACHINE"))
+
 if os.environ.get("HACKATHON_MACHINE") == "VM":
     site = "http://hacks.eastus.cloudapp.azure.com"
     host = "0.0.0.0"

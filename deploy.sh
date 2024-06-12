@@ -19,4 +19,4 @@ pip install -r requirements.txt
 pkill -f main.py
 
 # Run Application
-nohup python main.py
+nohup python main.py &
