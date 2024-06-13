@@ -7,6 +7,8 @@ import requests
 dotenv.load_dotenv()
 
 
+print(os.environ)
+
 if os.environ.get("ENV") == "vm":
     host = "0.0.0.0"
     port = 80
