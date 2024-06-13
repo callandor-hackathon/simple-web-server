@@ -18,12 +18,5 @@ source venv/bin/activate
 # Install Requirements
 pip install -r requirements.txt
 
-# Load Bash Profile
-source ~/.bashrc
-
-# Terminate Existing Process
-pm2 stop all
-
 # Run Application
-pm2 start main.py --interpreter venv/bin/python
-# pm2 "venv/bin/flask --app main.py run --host=0.0.0.0 --port=80"
+pm2 restart ecosystem.config.js

@@ -8,9 +8,9 @@ dotenv.load_dotenv()
 
 print(os.environ)
 
-if os.environ.get("HACKATHON_MACHINE") == "VM":
-    host = "0.0.0.0"
-    port = 80
+if "HOST" in os.environ and "PORT" in os.environ:
+    host = os.environ["host"]
+    port = os.environ["port"]
 else:
     host = "localhost"
     port = 8080
