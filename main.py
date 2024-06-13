@@ -9,8 +9,8 @@ dotenv.load_dotenv()
 print(os.environ)
 
 if "HOST" in os.environ and "PORT" in os.environ:
-    host = os.environ["host"]
-    port = os.environ["port"]
+    host = os.environ["HOST"]
+    port = os.environ["PORT"]
 else:
     host = "localhost"
     port = 8080
