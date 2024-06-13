@@ -4,6 +4,8 @@ import flask
 import requests
 
 
+dotenv.load_dotenv()
+
 print(os.environ)
 
 if os.environ.get("HACKATHON_MACHINE") == "VM":
