@@ -2,9 +2,6 @@
 
 REPOSITORY=$1
 
-# Load Bash Profile
-source ~/.bashrc
-
 # Navigate to Repository
 cd $REPOSITORY
 
@@ -20,6 +17,9 @@ source venv/bin/activate
 
 # Install Requirements
 pip install -r requirements.txt
+
+# Load Bash Profile
+source ~/.bashrc
 
 # Terminate Existing Process
 pm2 stop all
