@@ -4,12 +4,9 @@ import flask
 import requests
 
 
-dotenv.load_dotenv()
-
-
 print(os.environ)
 
-if os.environ.get("ENV") == "vm":
+if os.environ.get("HACKATHON_MACHINE") == "VM":
     host = "0.0.0.0"
     port = 80
 else:
@@ -67,4 +64,5 @@ def restricted_endpoint():
 
 
 if __name__ == "__main__":
+    print(f"Running on {host}:{port}")
     app.run(host=host, port=port)

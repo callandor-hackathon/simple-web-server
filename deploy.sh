@@ -2,6 +2,9 @@
 
 REPOSITORY=$1
 
+# Load Bash Profile
+source ~/.bashrc
+
 # Navigate to Repository
 cd $REPOSITORY
 
@@ -19,9 +22,6 @@ pip install -r requirements.txt
 
 # Terminate Existing Process
 sudo pm2 stop all
-
-# Indicate Production
-export ENV=vm
 
 # Run Application
 sudo pm2 start main.py --interpreter venv/bin/python
